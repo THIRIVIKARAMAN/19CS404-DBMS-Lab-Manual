@@ -23,6 +23,7 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 
 ### ER Diagram:
 *Paste or attach your diagram here*  
+<img width="3840" height="599" alt="Untitled diagram _ Mermaid Chart-2025-09-01-022128" src="https://github.com/user-attachments/assets/391ee2f0-454d-4375-87a3-fc4111c79535" />
 
 ![ER Diagram](er_diagram_fitness.png)
 
