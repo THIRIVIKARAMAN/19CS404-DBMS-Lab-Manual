@@ -30,7 +30,7 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 
 | Entity | Attributes (PK, FK)|             Notes                      |
 |--------|--------------------|----------------------------------------|
-|Member  | MemberID (PK)      | Members registered in gym              |
+|Member  | MemberID (PK)      | Members registered in gym                        |
 |Program | ProgramID (PK)     | Fitness programs like Yoga, Zumba      |
 |Trainer | TrainerID (PK)     | Trainers assigned to programs          |
 |Session | SessionID (PK)     | Personal training / attendance session |
