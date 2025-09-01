@@ -30,7 +30,7 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 
 | Entity | Attributes (PK, FK)|             Notes                      |
 |--------|--------------------|----------------------------------------|
-|Member  | MemberID (PK)      | Members registered in gym                        |
+|Member  | MemberID (PK)      | Members registered in gym              |
 |Program | ProgramID (PK)     | Fitness programs like Yoga, Zumba      |
 |Trainer | TrainerID (PK)     | Trainers assigned to programs          |
 |Session | SessionID (PK)     | Personal training / attendance session |
@@ -40,15 +40,11 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 
 | Relationship | Cardinality | Participation | Notes |
 |--------------|------------|---------------|-------|
-| Member – Program	M:N	Optional	A member can join many programs, and a program can have many members
-Program – Trainer	M:N	Mandatory	A program may have multiple trainers, and trainers can handle multiple programs
-Member – Session	1:N	Optional	A member can book many sessions
-Trainer – Session	1:N	Mandatory	A trainer conducts many sessions
-Session – Attendance	1:N	Mandatory	Each session has multiple attendance records
-Member – Payment	1:N	Mandatory	A member can make many payments             |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
-
+|Member – Program       |M:N            |Optional               |A member can join many programs, and a program can have many members       |
+|Program – Trainer              | M:N           |Mandatory               |A program may have multiple trainers, and trainers can handle multiple programs       |
+|Member – Session              |1:N            |Optional               |A member can book many sessions       |
+|Trainer – Session|1:N|Mandatory|A trainer conducts many sessions|
+|Member – Payment|1:N|Mandatory|A member can make many payments|
 ### Assumptions
 - 
 - 
