@@ -73,32 +73,31 @@ The Central Library wants to manage book lending and cultural events.
 
 ### Entities and Attributes
 
-| Entity       | Attributes (PK, FK)                          | Notes                                 |
-|--------------|----------------------------------------------|---------------------------------------|
-| Customer     | CustomerID (PK)                             | Restaurant customers                  |
-| Reservation  | ReservationID (PK), CustomerID (FK), TableID (FK) | Table booking details           |
-| Table        | TableID (PK)                                | Dining tables                         |
-| Order        | OrderID (PK), ReservationID (FK)            | Food order per reservation            |
-| Dish         | DishID (PK)                                 | Food items (starter, main, dessert)   |
-| OrderDetail  | OrderDetailID (PK), OrderID (FK), DishID (FK)| Junction table for orders and dishes  |
-| Bill         | BillID (PK), ReservationID (FK)             | Final billing for reservation         |
-| Waiter       | WaiterID (PK)                               | Assigned waiters                      |
+| Entity       | Attributes (PK, FK)                           | Notes                                 |
+|--------------|-----------------------------------------------|---------------------------------------|
+| Member       | MemberID (PK)                                | Library members                       |
+| Book         | BookID (PK)                                  | Each book copy tracked individually   |
+| Loan         | LoanID (PK), BookID (FK), MemberID (FK)      | Tracks book borrow/return             |
+| Event        | EventID (PK)                                 | Cultural/library events                |
+| Speaker      | SpeakerID (PK)                               | Guest speakers/authors                 |
+| Room         | RoomID (PK)                                  | Rooms for events/study                |
+| Registration | RegID (PK), EventID (FK), MemberID (FK)      | Members registering for events        |
 
 ### Relationships and Constraints
 
-| Relationship         | Cardinality | Participation | Notes                                         |
-|----------------------|-------------|---------------|-----------------------------------------------|
-| Customer – Reservation | 1:N       | Optional      | A customer can make multiple reservations     |
-| Reservation – Table    | 1:1       | Mandatory     | Each reservation is tied to one table         |
-| Reservation – Order    | 1:N       | Mandatory     | One reservation can include many orders       |
-| Order – Dish           | M:N via OrderDetail | Mandatory | An order can include many dishes              |
-| Reservation – Bill     | 1:1       | Mandatory     | One bill generated per reservation            |
-| Reservation – Waiter   | 1:N       | Optional      | A waiter serves one or more reservations      |
+| Relationship        | Cardinality | Participation | Notes                                               |
+|---------------------|-------------|---------------|-----------------------------------------------------|
+| Member – Loan – Book| M:N via Loan| Mandatory     | Members borrow books, tracked by Loan table         |
+| Member – Event      | M:N via Registration | Optional | Members can register for events                     |
+| Event – Speaker     | M:N         | Mandatory     | Events may have multiple speakers                   |
+| Event – Room        | 1:1         | Mandatory     | Each event is assigned one room                     |
+| Loan – Fine         | 1:1         | Optional      | Fine applied if book returned late                  |
 
 ### Assumptions
-- One reservation corresponds to exactly one table.  
-- Bills are generated per reservation, not per order.  
-- One waiter usually serves one reservation, but may serve many across the shift.  
+- Each book copy has a unique BookID.  
+- Events cannot be held without a room allocation.  
+- Fines are stored in the Loan table.  
+  
 ---
 
 # Scenario C: Restaurant Table Reservation & Ordering
