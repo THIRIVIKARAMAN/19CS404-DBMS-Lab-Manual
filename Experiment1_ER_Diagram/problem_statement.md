@@ -46,9 +46,11 @@ FlexiFit Gym wants a database to manage its members, trainers, and fitness progr
 |Trainer – Session|1:N|Mandatory|A trainer conducts many sessions|
 |Member – Payment|1:N|Mandatory|A member can make many payments|
 ### Assumptions
-- 
-- 
-- 
+- A program must have at least one trainer.
+
+- A session is always linked to a trainer.
+
+- Payments cover memberships or personal sessions. 
 
 ---
 
