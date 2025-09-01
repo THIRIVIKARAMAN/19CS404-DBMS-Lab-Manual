@@ -69,7 +69,9 @@ The Central Library wants to manage book lending and cultural events.
 - Overdue fines apply for late returns.
 
 ### ER Diagram:
-*Paste or attach your diagram here*  
+*Paste or attach your diagram here* 
+<img width="3840" height="943" alt="Untitled diagram _ Mermaid Chart-2025-09-01-022711" src="https://github.com/user-attachments/assets/d29d2cff-d1bd-4059-a286-5691e26b00bb" />
+
 ![ER Diagram](er_diagram_library.png)
 
 ### Entities and Attributes
@@ -115,7 +117,9 @@ A popular restaurant wants to manage reservations, orders, and billing.
 - Waiters assigned to serve reservations.
 
 ### ER Diagram:
-*Paste or attach your diagram here*  
+*Paste or attach your diagram here* 
+<img width="3840" height="1099" alt="Untitled diagram _ Mermaid Chart-2025-09-01-022451" src="https://github.com/user-attachments/assets/762120d1-cc8c-464a-816c-4c569bc1b081" />
+
 ![ER Diagram](er_diagram_restaurant.png)
 
 ### Entities and Attributes
