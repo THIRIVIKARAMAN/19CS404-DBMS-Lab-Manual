@@ -119,26 +119,32 @@ A popular restaurant wants to manage reservations, orders, and billing.
 
 ### Entities and Attributes
 
-| Entity | Attributes (PK, FK) | Notes |
-|--------|--------------------|-------|
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
-|        |                    |       |
+| Entity       | Attributes (PK, FK)                          | Notes                                 |
+|--------------|----------------------------------------------|---------------------------------------|
+| Customer     | CustomerID (PK)                             | Restaurant customers                  |
+| Reservation  | ReservationID (PK), CustomerID (FK), TableID (FK) | Table booking details           |
+| Table        | TableID (PK)                                | Dining tables                         |
+| Order        | OrderID (PK), ReservationID (FK)            | Food order per reservation            |
+| Dish         | DishID (PK)                                 | Food items (starter, main, dessert)   |
+| OrderDetail  | OrderDetailID (PK), OrderID (FK), DishID (FK)| Junction table for orders and dishes  |
+| Bill         | BillID (PK), ReservationID (FK)             | Final billing for reservation         |
+| Waiter       | WaiterID (PK)                               | Assigned waiters                      |
 
 ### Relationships and Constraints
 
-| Relationship | Cardinality | Participation | Notes |
-|--------------|------------|---------------|-------|
-|              |            |               |       |
-|              |            |               |       |
-|              |            |               |       |
+| Relationship         | Cardinality | Participation | Notes                                         |
+|----------------------|-------------|---------------|-----------------------------------------------|
+| Customer – Reservation | 1:N       | Optional      | A customer can make multiple reservations     |
+| Reservation – Table    | 1:1       | Mandatory     | Each reservation is tied to one table         |
+| Reservation – Order    | 1:N       | Mandatory     | One reservation can include many orders       |
+| Order – Dish           | M:N via OrderDetail | Mandatory | An order can include many dishes              |
+| Reservation – Bill     | 1:1       | Mandatory     | One bill generated per reservation            |
+| Reservation – Waiter   | 1:N       | Optional      | A waiter serves one or more reservations      |
 
 ### Assumptions
-- 
-- 
-- 
+- One reservation corresponds to exactly one table.  
+- Bills are generated per reservation, not per order.  
+- One waiter usually serves one reservation, but may serve many across the shift.  
 
 ---
 
