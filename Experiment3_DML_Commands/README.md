@@ -1,5 +1,8 @@
 # Experiment 3: DML Commands
 
+## NAME : THIRIVIKARAMAN P
+## Reg.No. : 212224060286
+
 ## AIM
 To study and implement DML (Data Manipulation Language) commands.
 
@@ -47,123 +50,142 @@ SELECT column1, column2 FROM table_name WHERE condition;
 ```
 **Question 1**
 --
--- Paste Question 1 here
+Write a SQL statement to Update the grade of all customers in Chennai city as  5. 
 
 ```sql
--- Paste your SQL code below for Question 1
+update customer 
+set grade=5
+where city='Chennai';
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="1251" height="428" alt="image" src="https://github.com/user-attachments/assets/b22e6287-c2df-480b-b884-1dc29e0bdd59" />
 
 **Question 2**
 ---
--- Paste Question 2 here
+Write a SQL statement to Update the per_unit_price to 25 and total_price accordingly in purchases table where purchase_date is '2022-08-15' and product_id is 12.
 
 ```sql
--- Paste your SQL code below for Question 2
+update purchases
+set per_unit_price=25, total_price=25*quantity
+where purchase_date='2022-08-15' and product_id=12;
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1262" height="453" alt="image" src="https://github.com/user-attachments/assets/aa4755f6-54e6-4e26-9f0b-76819f06c639" />
 
 **Question 3**
 ---
--- Paste Question 3 here
+Write a SQL query to Delete customers from 'customer' table where 'GRADE' is not equal to 3.
 
 ```sql
--- Paste your SQL code below for Question 3
+delete from customer
+where GRADE not in(3);
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="857" height="621" alt="image" src="https://github.com/user-attachments/assets/d889d6a9-e2ef-4e84-9733-9cb01e470ec3" />
 
 **Question 4**
 ---
--- Paste Question 4 here
+Write a SQL query to Delete a Specific Surgery which was made on 28th Feb 2024.
 
 ```sql
--- Paste your SQL code below for Question 4
+delete from surgeries
+where surgery_date = '2024-02-28';
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1204" height="400" alt="image" src="https://github.com/user-attachments/assets/22cce069-b599-4941-850f-d289530992bd" />
 
 **Question 5**
 ---
--- Paste Question 5 here
+Write a SQL query to Delete All Doctors with a NULL Specialization
 
 ```sql
--- Paste your SQL code below for Question 5
+delete from doctors
+where specialization is null;
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1052" height="866" alt="image" src="https://github.com/user-attachments/assets/be531f28-9fd3-40e6-b2eb-22d8903e73ce" />
 
 **Question 6**
 ---
--- Paste Question 6 here
+Write a SQL query to Delete customers from 'customer' table where 'GRADE' is greater than or equal to 2.
 
 ```sql
--- Paste your SQL code below for Question 6
+delete from Customer
+where Grade >=2;
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="571" height="508" alt="image" src="https://github.com/user-attachments/assets/26604053-4f23-4980-bf4c-532b9f3ede36" />
 
 **Question 7**
 ---
--- Paste Question 7 here
+Write a SQL query to label rows in the Calculations table as 'Even' if value1 is even, otherwise 'Odd'.
 
 ```sql
--- Paste your SQL code below for Question 7
+select id,value1,
+    CASE
+        WHEN CAST(value1 AS
+        INTEGER) % 2=0 THEN 'Even'
+        ELSE 'Odd'
+    END AS parity
+FROM calculations;
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="642" height="444" alt="image" src="https://github.com/user-attachments/assets/40401596-b58f-4d53-8340-30d650612fd0" />
 
 **Question 8**
 ---
--- Paste Question 8 here
+Write a SQL query to find the details of those salespeople who live in cities other than Paris and Rome. Return salesman_id, name, city, commission.
 
 ```sql
--- Paste your SQL code below for Question 8
+select salesman_id,name,city,commission from salesman
+where city NOT IN ('Paris','Rome');
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="843" height="372" alt="image" src="https://github.com/user-attachments/assets/6adf44ce-767e-41c2-ad0a-6a0829bb1a12" />
 
 **Question 9**
 ---
--- Paste Question 9 here
+write a SQL query to find customers who are either from the city 'New York' or who do not have a grade greater than 100. Return customer_id, cust_name, city, grade, and salesman_id.
 
 ```sql
--- Paste your SQL code below for Question 9
+select customer_id,cust_name,city ,grade,salesman_id from customer
+where city='New York' OR grade<=100;
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="1043" height="383" alt="image" src="https://github.com/user-attachments/assets/92303469-9d44-4839-afad-f9450d47a5e3" />
 
 **Question 10**
 ---
--- Paste Question 10 here
+Write a SQL query to calculate the discounted price for products whose original price is between $50 and $150. Return product_id, original_price, discount_percentage, and discounted_price.
 
 ```sql
--- Paste your SQL code below for Question 10
+select product_id,original_price,discount_percentage,
+(original_price - (original_price * discount_percentage)) AS discounted_price
+from products
+where original_price BETWEEN 50 AND 150;
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1090" height="269" alt="image" src="https://github.com/user-attachments/assets/9d2af8cc-f3ed-4004-b16e-b5a6f1fecf56" />
 
 ## RESULT
 Thus, the SQL queries to implement DML commands have been executed successfully.
