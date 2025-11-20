@@ -1,5 +1,6 @@
 # Experiment 9: PL/SQL – Procedures and Functions
-
+# NAME: THIRIVIKARAMAN P
+# REG NO:212224060286
 ## AIM
 To understand and implement procedures and functions in PL/SQL for performing various operations such as calculations, decision-making, and looping.
 
