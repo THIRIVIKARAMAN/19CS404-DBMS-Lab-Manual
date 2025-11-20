@@ -1,5 +1,6 @@
 # Experiment 8: PL/SQL Cursor Programs
-
+# NAME: THIRIVIKARAMAN P
+# REG NO: 212224060286
 ## AIM
 To write and execute PL/SQL programs using cursors and exception handling to manage runtime errors effectively and display appropriate messages.
 
